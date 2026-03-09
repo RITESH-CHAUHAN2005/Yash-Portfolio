@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Palette, Film, Monitor } from "lucide-react";
-import profileImg from "@/assets/profile.png";
+import profileImg from "@/assets/Profile.png";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -16,7 +16,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="relative py-32 overflow-hidden" ref={ref}>
       <div className="absolute top-0 left-1/2 w-[600px] h-[600px] -translate-x-1/2 bg-gradient-radial opacity-50" />
-      
+
       <div className="container px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Profile Image */}
