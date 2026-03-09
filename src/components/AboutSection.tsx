@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Film, Monitor } from "lucide-react";
+import { Palette, Film, Monitor, Sparkles } from "lucide-react";
 import profileImg from "@/assets/Profile.png";
 
 const AboutSection = () => {
@@ -8,6 +8,7 @@ const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const highlights = [
+    { icon: Sparkles, company: "Simulanis", desc: "3D character animation & educational 3D content" },
     { icon: Palette, company: "Adda247", desc: "Social media creatives & educational video edits" },
     { icon: Monitor, company: "Abhiwan Technology", desc: "Gaming visuals & UI creatives" },
     { icon: Film, company: "Intotheverse", desc: "Cinematic trailers, posters & promotional content" },
