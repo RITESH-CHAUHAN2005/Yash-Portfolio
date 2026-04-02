@@ -39,7 +39,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          Graphic Designer & Video Editor
+          Graphic Designer & 3D Animator
         </motion.p>
 
         <motion.p

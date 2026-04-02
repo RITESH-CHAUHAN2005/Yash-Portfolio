@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, MapPin, Linkedin } from "lucide-react";
+import { Mail, MapPin, Linkedin, Phone } from "lucide-react";
 import connectBg from "@/assets/Connect.png";
 
 const ContactSection = () => {
@@ -58,6 +58,18 @@ const ContactSection = () => {
                 <p className="font-body font-medium text-[#1C1C1C]">Delhi, India</p>
               </div>
             </motion.div>
+
+            <motion.a
+              href="tel:+918595672291"
+              className="flex items-center gap-4 p-4 rounded-xl bg-[#F0EEE9] text-[#1C1C1C] hover:bg-[#C8A96A]/10 transition-colors"
+              whileHover={{ x: 8, scale: 1.02 }}
+            >
+              <Phone className="w-6 h-6 text-[#C8A96A]" />
+              <div>
+                <p className="text-xs text-[#9A9A9A] font-body">Mobile</p>
+                <p className="font-body font-medium">+91 8595672291</p>
+              </div>
+            </motion.a>
 
             <motion.a
               href="https://www.linkedin.com/in/yash-chauhan-a263a5215/"

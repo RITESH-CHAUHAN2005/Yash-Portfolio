@@ -9,10 +9,10 @@ const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const highlights = [
-    { icon: Sparkles, company: "Simulanis", desc: "3D character animation & educational 3D content" },
-    { icon: Palette, company: "Adda247", desc: "Social media creatives & educational video edits" },
-    { icon: Monitor, company: "Abhiwan Technology", desc: "Gaming visuals & UI creatives" },
-    { icon: Film, company: "Intotheverse", desc: "Cinematic trailers, posters & promotional content" },
+    { icon: Sparkles, company: "Simulanis", desc: "3D character animation, rigging support & educational 3D content" },
+    { icon: Palette, company: "Adda247", desc: "3D animation workflows, character rigging and marketing graphics" },
+    { icon: Monitor, company: "Abhiwan Technology", desc: "Game-ready 3D animation, rigging and high-impact graphics" },
+    { icon: Film, company: "Intotheverse", desc: "Advanced 3D animation, rigging refinement and cinematic graphics" },
   ];
 
   return (
@@ -64,7 +64,7 @@ const AboutSection = () => {
               Designing the <span className="text-gradient">Future</span>
             </h2>
             <p className="text-[#6B6B6B] text-lg leading-relaxed mb-10 font-body">
-              Graphic Designer & Video Editor with experience creating digital creatives, motion graphics, social media visuals and marketing videos. I bring brands to life through compelling visual storytelling.
+              Graphic Designer & 3D Animator with experience creating digital creatives, motion graphics, social media visuals and marketing videos. I bring brands to life through compelling visual storytelling.
             </p>
 
             <div className="space-y-4">

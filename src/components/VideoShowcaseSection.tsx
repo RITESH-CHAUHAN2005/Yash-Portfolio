@@ -181,7 +181,7 @@ const VideoShowcaseSection = () => {
             <div className="absolute left-0 top-24 h-56 w-56 rounded-full bg-[#C8A96A]/8 blur-[80px]" />
             <div className="absolute right-0 bottom-12 h-64 w-64 rounded-full bg-[#C8A96A]/8 blur-[90px]" />
 
-            <div className="container relative z-10 px-6">
+            <div className="container relative z-10 px-3 sm:px-6">
                 <motion.div
                     className="mx-auto mb-16 max-w-3xl text-center"
                     initial={{ opacity: 0, y: 30 }}
@@ -200,7 +200,7 @@ const VideoShowcaseSection = () => {
                     </p>
                 </motion.div>
 
-                <div className="mx-auto grid max-w-5xl gap-8">
+                <div className="mx-auto grid max-w-5xl gap-6 sm:gap-8">
                     {animations.map((item, index) => {
                         const isPaused = pausedVideos[item.id];
                         const isActive = activePreviewId === item.id && visibleVideos[item.id] && !isPaused;
@@ -208,7 +208,7 @@ const VideoShowcaseSection = () => {
                         return (
                             <motion.article
                                 key={item.id}
-                                className="group relative overflow-hidden rounded-[28px] border border-slate-200/70 bg-white/80 p-4 shadow-[0_16px_50px_-28px_rgba(0,0,0,0.18)] ring-1 ring-black/5"
+                                className="group relative overflow-hidden rounded-[24px] sm:rounded-[28px] border border-slate-200/70 bg-white/80 p-3 sm:p-4 shadow-[0_16px_50px_-28px_rgba(0,0,0,0.18)] ring-1 ring-black/5"
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                                 transition={{ duration: 0.55, delay: 0.1 * index }}
@@ -221,7 +221,7 @@ const VideoShowcaseSection = () => {
                                         previewCardRefs.current[item.id] = element;
                                     }}
                                     data-video-id={item.id}
-                                    className="relative overflow-hidden rounded-[22px] border border-slate-200/50 bg-slate-950 shadow-inner shadow-black/20"
+                                    className="relative overflow-hidden rounded-[20px] sm:rounded-[22px] border border-slate-200/50 bg-slate-950 shadow-inner shadow-black/20"
                                     onMouseEnter={() => setActivePreviewId(item.id)}
                                     onFocus={() => setActivePreviewId(item.id)}
                                 >
@@ -237,7 +237,7 @@ const VideoShowcaseSection = () => {
                                                 previewVideoRefs.current[item.id] = element;
                                             }}
                                             src={item.src}
-                                            className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.01]"
+                                            className="aspect-[4/5] sm:aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.01]"
                                             loop
                                             muted
                                             playsInline
@@ -252,7 +252,7 @@ const VideoShowcaseSection = () => {
                                             {isActive ? "Auto preview on" : "Preview ready"}
                                         </div>
 
-                                        <div className="absolute inset-x-0 bottom-0 z-20 p-5 text-left">
+                                        <div className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-5 text-left">
                                             <p className="text-xs uppercase tracking-[0.28em] text-[#C8A96A]/90">Click to expand</p>
                                             <h3 className="mt-2 text-2xl font-heading font-bold text-white">{item.title}</h3>
                                         </div>

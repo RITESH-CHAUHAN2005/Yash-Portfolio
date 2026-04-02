@@ -14,19 +14,19 @@ const experiences = [
     company: "Adda247",
     role: "3D Animator & Designer",
     duration: "Apr 2023 – Nov 2023",
-    tasks: ["Social media creatives", "Promotional graphics", "Educational video editing", "Marketing motion visuals"],
+    tasks: ["3D animation for educational explainers", "Character rigging and animation cleanup", "Marketing graphics for campaign creatives", "Motion-based visual storytelling for learning content"],
   },
   {
     company: "Abhiwan Technology",
     role: "3D Animator & Designer",
     duration: "Nov 2023 – Mar 2024",
-    tasks: ["Gaming UI creatives", "In-game banners", "Gameplay trailers", "Promotional visuals"],
+    tasks: ["Advanced character animation for game assets", "3D rigging and skinning workflows", "Cinematic gameplay animation sequences", "Animation polish for production-ready output"],
   },
   {
     company: "Intotheverse",
     role: "3D Animator & Designer",
     duration: "Apr 2024 – Present",
-    tasks: ["Game posters", "Social media creatives", "Cinematic trailers", "Marketing reels"],
+    tasks: ["High-quality 3D character animation", "Complex rigging setup and controller refinement", "Cinematic animation for trailers", "End-to-end animation delivery for campaigns"],
   },
 ];
 

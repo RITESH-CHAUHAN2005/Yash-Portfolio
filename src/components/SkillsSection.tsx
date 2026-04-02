@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Palette, Film, Layers, Monitor, Sparkles, Image, Share2, Eye, Zap, Trophy, Flame, Star, Cpu } from "lucide-react";
+import { Palette, Layers, Monitor, Sparkles, Image, Share2, Eye, Zap, Trophy, Flame, Star, Cpu } from "lucide-react";
 import skillsBg from "@/assets/Skills.png";
 
 const skills = [
@@ -14,13 +14,13 @@ const skills = [
     keyPoints: ["High-converting social media creatives (ads, posts, thumbnails)", "Brand identity design (logos, color systems, typography)", "UI/UX-focused layouts for modern websites"]
   },
   {
-    name: "Video Editing",
-    icon: Film,
+    name: "Maya",
+    icon: Cpu,
     level: 90,
-    description: "Short-form content, storytelling-based editing, motion graphics & transitions",
-    tools: ["Premiere Pro", "Final Cut", "DaVinci"],
+    description: "3D animation, character rigging, scene setup and production-ready workflows",
+    tools: ["Animation", "Rigging", "Rendering"],
     projects: "150+",
-    keyPoints: ["Short-form content (Reels, Shorts, TikTok-style edits)", "Storytelling-based editing with retention hooks", "Motion graphics & transitions for engaging visuals"]
+    keyPoints: ["Character rigging and control setup", "3D animation for cinematic/game shots", "Pipeline-friendly scene and render preparation"]
   },
   {
     name: "Adobe Photoshop",
@@ -41,13 +41,13 @@ const skills = [
     keyPoints: ["Professional color grading", "Motion graphics integration", "Audio synchronization & mixing"]
   },
   {
-    name: "After Effects",
+    name: "Blender",
     icon: Sparkles,
     level: 85,
-    description: "Dynamic motion graphics, visual effects, animation sequences",
-    tools: ["Animation", "VFX", "Motion Design"],
+    description: "3D modeling, animation workflows, lighting and rendering",
+    tools: ["Modeling", "Rigging", "Rendering"],
     projects: "120+",
-    keyPoints: ["Dynamic motion graphics", "Professional visual effects", "Animation sequences & keyframing"]
+    keyPoints: ["3D modeling and scene setup", "Character rigging and animation", "Lighting, shading and rendering pipelines"]
   },
   {
     name: "Thumbnail Design",
@@ -130,7 +130,7 @@ const SkillsSection = () => {
             transition={{ duration: 0.5 }}
             className="inline-block mb-4"
           >
-            
+
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-4">
             Click to <span className="text-gradient">Explore Skills</span>
@@ -332,7 +332,7 @@ const SkillsSection = () => {
           className="text-center mt-12"
         >
           <p className="text-muted-foreground/50 text-sm font-body tracking-[0.3em] uppercase">
-             Click any skill card to explore details
+            Click any skill card to explore details
           </p>
         </motion.div>
       </div>
