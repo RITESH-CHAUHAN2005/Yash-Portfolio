@@ -1,33 +1,28 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import homeBack from "@/assets/home back.jpg";
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient">
-      {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-
-      {/* Floating shapes */}
-      <motion.div
-        className="absolute top-20 right-20 w-20 h-20 border border-primary/20 rounded-lg"
-        animate={{ rotate: 360, y: [-10, 10, -10] }}
-        transition={{ rotate: { duration: 20, repeat: Infinity }, y: { duration: 4, repeat: Infinity } }}
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <img
+        src={homeBack}
+        alt="Home background"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
-      <motion.div
-        className="absolute bottom-32 left-20 w-16 h-16 border border-accent/20 rounded-full"
-        animate={{ rotate: -360, y: [10, -10, 10] }}
-        transition={{ rotate: { duration: 15, repeat: Infinity }, y: { duration: 5, repeat: Infinity } }}
-      />
-      <motion.div
-        className="absolute top-1/3 right-1/3 w-2 h-2 bg-primary/40 rounded-full"
-        animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      />
+      <div className="absolute inset-0 bg-white/10" />
+      {/* Text shadow/glow effect */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.3) 0%, transparent 70%)'
+      }} />
 
       <div className="container relative z-10 text-center px-6">
         <motion.h1
-          className="font-heading font-extrabold mb-4 text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-gradient"
+          className="font-brand font-extrabold mb-4 text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#1C1C1C]"
+          style={{
+            textShadow: '0 2px 10px rgba(255,255,255,0.8), 0 0 30px rgba(200,169,106,0.3)',
+            WebkitTextStroke: '0.5px rgba(255,255,255,0.5)'
+          }}
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -36,7 +31,10 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.p
-          className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-heading font-medium mb-8"
+          className="text-xl sm:text-2xl md:text-3xl text-[#3A3A3A] font-heading font-medium mb-8"
+          style={{
+            textShadow: '0 1px 8px rgba(255,255,255,0.7)'
+          }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -45,7 +43,10 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.p
-          className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto mb-12 font-body"
+          className="text-[#6B6B6B] text-base sm:text-lg max-w-xl mx-auto mb-12 font-body font-medium"
+          style={{
+            textShadow: '0 1px 6px rgba(255,255,255,0.6)'
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
@@ -61,7 +62,7 @@ const HeroSection = () => {
         >
           <motion.a
             href="#portfolio"
-            className="px-8 py-4 rounded-lg bg-primary text-primary-foreground font-heading font-semibold text-lg glow-primary"
+            className="px-8 py-4 rounded-xl bg-[#C8A96A] text-white font-heading font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-[#B89655]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -69,8 +70,8 @@ const HeroSection = () => {
           </motion.a>
           <motion.a
             href="#contact"
-            className="px-8 py-4 rounded-lg border border-glass-border text-foreground font-heading font-semibold text-lg glass-card"
-            whileHover={{ scale: 1.05, borderColor: "hsl(270 60% 55% / 0.5)" }}
+            className="px-8 py-4 rounded-xl border border-[#D6D3CD] text-[#1C1C1C] font-heading font-semibold text-lg transition-all duration-300 hover:bg-[#F0EEE9] hover:border-[#C8A96A]"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Contact

@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Briefcase } from "lucide-react";
+import experienceBg from "@/assets/Experience.png";
 
 const experiences = [
   {
@@ -35,11 +36,17 @@ const ExperienceSection = () => {
 
   return (
     <section id="experience" className="py-32 relative" ref={ref}>
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary/5 rounded-full blur-[120px]" />
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{ backgroundImage: `url(${experienceBg})` }}
+      />
+      <div className="absolute inset-0 bg-white/30" />
+
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#C8A96A]/5 rounded-full blur-[120px]" />
       <div className="container px-6 relative z-10">
         <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-          <p className="text-primary font-body text-sm tracking-[0.2em] uppercase mb-4">Career</p>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground">
+          <p className="text-[#C8A96A] font-body text-sm tracking-[0.2em] uppercase mb-4">Career</p>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1C1C1C]">
             Work <span className="text-gradient">Experience</span>
           </h2>
         </motion.div>
@@ -47,7 +54,7 @@ const ExperienceSection = () => {
         <div className="relative max-w-3xl mx-auto">
           {/* Timeline line */}
           <motion.div
-            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-accent to-transparent md:-translate-x-px"
+            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#C8A96A] via-[#E5E2DC] to-transparent md:-translate-x-px"
             initial={{ scaleY: 0 }}
             animate={inView ? { scaleY: 1 } : {}}
             transition={{ duration: 1.5, ease: "easeOut" }}
@@ -63,21 +70,21 @@ const ExperienceSection = () => {
               transition={{ delay: 0.3 + i * 0.2, duration: 0.6 }}
             >
               {/* Dot */}
-              <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-primary glow-primary -translate-x-1.5 mt-6 z-10" />
+              <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-[#C8A96A] shadow-lg" style={{ boxShadow: "0 0 20px rgba(200, 169, 106, 0.4)", transform: "translate(-50%, 0)" }} />
 
               {/* Card */}
               <div className={`ml-14 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:pr-0" : "md:pl-0"}`}>
-                <div className="glass-card p-6 rounded-xl hover:border-primary/30 transition-colors">
+                <div className="glass-card p-6 rounded-xl hover:border-[#C8A96A]/30 transition-colors">
                   <div className="flex items-center gap-3 mb-3">
-                    <Briefcase className="w-5 h-5 text-primary" />
-                    <span className="text-xs text-muted-foreground font-body">{exp.duration}</span>
+                    <Briefcase className="w-5 h-5 text-[#C8A96A]" />
+                    <span className="text-xs text-[#9A9A9A] font-body">{exp.duration}</span>
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-foreground">{exp.company}</h3>
-                  <p className="text-primary text-sm font-body mb-4">{exp.role}</p>
+                  <h3 className="text-xl font-heading font-bold text-[#1C1C1C]">{exp.company}</h3>
+                  <p className="text-[#C8A96A] text-sm font-body mb-4">{exp.role}</p>
                   <ul className="space-y-2">
                     {exp.tasks.map((task) => (
-                      <li key={task} className="text-muted-foreground text-sm font-body flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-accent" />
+                      <li key={task} className="text-[#6B6B6B] text-sm font-body flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-[#C8A96A]" />
                         {task}
                       </li>
                     ))}

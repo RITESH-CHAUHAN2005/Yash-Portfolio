@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Palette, Film, Monitor, Sparkles } from "lucide-react";
 import profileImg from "@/assets/Profile.png";
+import aboutBg from "@/assets/Aboutus.png";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -16,6 +17,11 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="relative py-32 overflow-hidden" ref={ref}>
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25"
+        style={{ backgroundImage: `url(${aboutBg})` }}
+      />
+      <div className="absolute inset-0 bg-white/35" />
       <div className="absolute top-0 left-1/2 w-[600px] h-[600px] -translate-x-1/2 bg-gradient-radial opacity-50" />
 
       <div className="container px-6 relative z-10">
@@ -28,7 +34,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="relative aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C8A96A]/15 to-[#E5E2DC]/15 blur-2xl" />
               <div className="relative glass-card rounded-2xl overflow-hidden h-full">
                 <img
                   src={profileImg}
@@ -39,10 +45,10 @@ const AboutSection = () => {
               </div>
               {/* Floating icons */}
               <motion.div className="absolute -top-4 -right-4 w-12 h-12 glass-card rounded-xl flex items-center justify-center" animate={{ y: [-5, 5, -5] }} transition={{ duration: 3, repeat: Infinity }}>
-                <Palette className="w-5 h-5 text-primary" />
+                <Palette className="w-5 h-5 text-[#C8A96A]" />
               </motion.div>
               <motion.div className="absolute -bottom-4 -left-4 w-12 h-12 glass-card rounded-xl flex items-center justify-center" animate={{ y: [5, -5, 5] }} transition={{ duration: 4, repeat: Infinity }}>
-                <Film className="w-5 h-5 text-accent" />
+                <Film className="w-5 h-5 text-[#C8A96A]" />
               </motion.div>
             </div>
           </motion.div>
@@ -53,11 +59,11 @@ const AboutSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-primary font-body text-sm tracking-[0.2em] uppercase mb-4">About Me</p>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+            <p className="text-[#C8A96A] font-body text-sm tracking-[0.2em] uppercase mb-4">About Me</p>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1C1C1C] mb-6">
               Designing the <span className="text-gradient">Future</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-10 font-body">
+            <p className="text-[#6B6B6B] text-lg leading-relaxed mb-10 font-body">
               Graphic Designer & Video Editor with experience creating digital creatives, motion graphics, social media visuals and marketing videos. I bring brands to life through compelling visual storytelling.
             </p>
 
@@ -69,14 +75,14 @@ const AboutSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.4 + i * 0.15, duration: 0.5 }}
-                  whileHover={{ x: 8, borderColor: "hsl(270 60% 55% / 0.3)" }}
+                  whileHover={{ x: 8, borderColor: "#C8A96A" }}
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <item.icon className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-lg bg-[#C8A96A]/10 flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 text-[#C8A96A]" />
                   </div>
                   <div>
-                    <h4 className="font-heading font-semibold text-foreground">{item.company}</h4>
-                    <p className="text-muted-foreground text-sm font-body">{item.desc}</p>
+                    <h4 className="font-heading font-semibold text-[#1C1C1C]">{item.company}</h4>
+                    <p className="text-[#6B6B6B] text-sm font-body">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}

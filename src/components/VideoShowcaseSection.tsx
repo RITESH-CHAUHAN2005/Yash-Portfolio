@@ -3,9 +3,18 @@ import { Expand, Pause, Play, Sparkles, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import ninjaAnimation from "@/assets/Ninja Animation - Yash Chauhan (1080p, h264).mp4";
+import sheikAnimation from "@/assets/Sheik animation_1080p.mp4";
 import spiderAnimation from "@/assets/Spider man animation - Yash Chauhan (1080p, h264).mp4";
+import showcaseBg from "@/assets/Showcase.png";
 
 const animations = [
+    {
+        id: "sheik-animation",
+        src: sheikAnimation,
+        title: "Sheik Action Reel",
+        tag: "3D Animation",
+        desc: "A dynamic character showcase with cleaner motion, sharp posing, and polished cinematic timing.",
+    },
     {
         id: "spider-animation",
         src: spiderAnimation,
@@ -163,8 +172,14 @@ const VideoShowcaseSection = () => {
 
     return (
         <section ref={sectionRef} className="relative py-32 overflow-hidden">
-            <div className="absolute left-0 top-24 h-56 w-56 rounded-full bg-primary/8 blur-[80px]" />
-            <div className="absolute right-0 bottom-12 h-64 w-64 rounded-full bg-accent/8 blur-[90px]" />
+            <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{ backgroundImage: `url(${showcaseBg})` }}
+            />
+            <div className="absolute inset-0 bg-white/25" />
+
+            <div className="absolute left-0 top-24 h-56 w-56 rounded-full bg-[#C8A96A]/8 blur-[80px]" />
+            <div className="absolute right-0 bottom-12 h-64 w-64 rounded-full bg-[#C8A96A]/8 blur-[90px]" />
 
             <div className="container relative z-10 px-6">
                 <motion.div
@@ -173,14 +188,14 @@ const VideoShowcaseSection = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm uppercase tracking-[0.24em] text-primary">
+                    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#C8A96A]/20 bg-[#C8A96A]/10 px-4 py-2 text-sm uppercase tracking-[0.24em] text-[#C8A96A]">
                         <Sparkles className="h-4 w-4" />
                         3D Animation Reels
                     </div>
-                    <h2 className="text-4xl font-heading font-bold text-foreground md:text-5xl">
+                    <h2 className="text-4xl font-heading font-bold text-[#1C1C1C] md:text-5xl">
                         Motion <span className="text-gradient">Showcase</span>
                     </h2>
-                    <p className="mt-5 text-base font-body leading-7 text-muted-foreground md:text-lg">
+                    <p className="mt-5 text-base font-body leading-7 text-[#6B6B6B] md:text-lg">
                         From web-slinging Spider-Verse action to razor-sharp ninja combat — two 3D animation reels crafted with precision, depth, and cinematic energy.
                     </p>
                 </motion.div>
@@ -193,20 +208,20 @@ const VideoShowcaseSection = () => {
                         return (
                             <motion.article
                                 key={item.id}
-                                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-card/90 p-4 shadow-[0_16px_50px_-28px_rgba(0,0,0,0.75)]"
+                                className="group relative overflow-hidden rounded-[28px] border border-slate-200/70 bg-white/80 p-4 shadow-[0_16px_50px_-28px_rgba(0,0,0,0.18)] ring-1 ring-black/5"
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                                 transition={{ duration: 0.55, delay: 0.1 * index }}
                                 whileHover={{ y: -4 }}
                             >
-                                <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-[linear-gradient(135deg,rgba(168,85,247,0.1),rgba(34,211,238,0.04),transparent_70%)] opacity-70" />
+                                <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-[linear-gradient(135deg,rgba(168,85,247,0.08),rgba(34,211,238,0.03),rgba(255,255,255,0.18))] opacity-100" />
 
                                 <div
                                     ref={(element) => {
                                         previewCardRefs.current[item.id] = element;
                                     }}
                                     data-video-id={item.id}
-                                    className="relative overflow-hidden rounded-[22px] border border-white/10 bg-black"
+                                    className="relative overflow-hidden rounded-[22px] border border-slate-200/50 bg-slate-950 shadow-inner shadow-black/20"
                                     onMouseEnter={() => setActivePreviewId(item.id)}
                                     onFocus={() => setActivePreviewId(item.id)}
                                 >
@@ -216,7 +231,7 @@ const VideoShowcaseSection = () => {
                                         onClick={() => setSelectedVideo(item)}
                                         aria-label={`Open ${item.title} in large view`}
                                     >
-                                        <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                                        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
                                         <video
                                             ref={(element) => {
                                                 previewVideoRefs.current[item.id] = element;
@@ -229,16 +244,16 @@ const VideoShowcaseSection = () => {
                                             preload="metadata"
                                         />
 
-                                        <div className="absolute left-5 top-5 z-20 inline-flex items-center gap-2 rounded-full border border-white/15 bg-background/70 px-3 py-1.5 text-xs uppercase tracking-[0.24em] text-foreground">
+                                        <div className="absolute left-5 top-5 z-20 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/85 px-3 py-1.5 text-xs uppercase tracking-[0.24em] text-slate-800 shadow-sm">
                                             {item.tag}
                                         </div>
 
-                                        <div className="absolute right-5 top-5 z-20 rounded-full border border-white/15 bg-background/70 px-3 py-1.5 text-[11px] uppercase tracking-[0.24em] text-primary">
+                                        <div className="absolute right-5 top-5 z-20 rounded-full border border-[#C8A96A]/15 bg-white/85 px-3 py-1.5 text-[11px] uppercase tracking-[0.24em] text-[#C8A96A] shadow-sm">
                                             {isActive ? "Auto preview on" : "Preview ready"}
                                         </div>
 
                                         <div className="absolute inset-x-0 bottom-0 z-20 p-5 text-left">
-                                            <p className="text-xs uppercase tracking-[0.28em] text-primary/90">Click to expand</p>
+                                            <p className="text-xs uppercase tracking-[0.28em] text-[#C8A96A]/90">Click to expand</p>
                                             <h3 className="mt-2 text-2xl font-heading font-bold text-white">{item.title}</h3>
                                         </div>
                                     </button>
@@ -256,7 +271,7 @@ const VideoShowcaseSection = () => {
                                                 event.stopPropagation();
                                                 togglePreviewPlayback(item.id);
                                             }}
-                                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-foreground transition hover:border-primary/40 hover:bg-primary/10"
+                                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-foreground transition hover:border-[#C8A96A]/40 hover:bg-[#C8A96A]/10"
                                             aria-label={isPaused ? `Play ${item.title}` : `Pause ${item.title}`}
                                         >
                                             {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
@@ -266,7 +281,7 @@ const VideoShowcaseSection = () => {
                                         <button
                                             type="button"
                                             onClick={() => setSelectedVideo(item)}
-                                            className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition hover:bg-primary/15"
+                                            className="inline-flex items-center gap-2 rounded-full border border-[#C8A96A]/20 bg-[#C8A96A]/10 px-4 py-2 text-sm font-medium text-[#C8A96A] transition hover:bg-[#C8A96A]/15"
                                             aria-label={`Expand ${item.title}`}
                                         >
                                             <Expand className="h-4 w-4" />
@@ -290,16 +305,16 @@ const VideoShowcaseSection = () => {
                         onClick={() => setSelectedVideo(null)}
                     >
                         <motion.div
-                            className="relative w-full max-w-6xl overflow-hidden rounded-[28px] border border-white/10 bg-card/95 shadow-[0_28px_120px_-35px_rgba(0,0,0,0.85)]"
+                            className="relative w-full max-w-6xl overflow-hidden rounded-[28px] border border-slate-200/70 bg-white/95 shadow-[0_28px_120px_-35px_rgba(0,0,0,0.28)] ring-1 ring-black/5"
                             initial={{ opacity: 0, scale: 0.92, y: 24 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.92, y: 24 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
                             onClick={(event) => event.stopPropagation()}
                         >
-                            <div className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-4 md:px-6">
+                            <div className="flex items-center justify-between gap-4 border-b border-slate-200/70 px-4 py-4 md:px-6">
                                 <div>
-                                    <p className="text-xs uppercase tracking-[0.24em] text-primary">{selectedVideo.tag}</p>
+                                    <p className="text-xs uppercase tracking-[0.24em] text-[#C8A96A]">{selectedVideo.tag}</p>
                                     <h3 className="mt-2 text-xl font-heading font-bold text-foreground md:text-2xl">{selectedVideo.title}</h3>
                                 </div>
 
@@ -315,7 +330,7 @@ const VideoShowcaseSection = () => {
                                     <button
                                         type="button"
                                         onClick={() => setSelectedVideo(null)}
-                                        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground transition hover:border-primary/40 hover:text-primary"
+                                        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-foreground transition hover:border-primary/40 hover:text-primary"
                                         aria-label="Close video preview"
                                     >
                                         <X className="h-5 w-5" />
@@ -323,7 +338,7 @@ const VideoShowcaseSection = () => {
                                 </div>
                             </div>
 
-                            <div className="bg-black">
+                            <div className="bg-slate-950">
                                 <video
                                     key={selectedVideo.id}
                                     ref={modalVideoRef}
